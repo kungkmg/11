@@ -1,0 +1,42 @@
+/* เลือกตัวหลักสำหรับหน้าบ้าน */
+.home {
+    text-align: center;
+  }
+  
+  /* การจัดระยะห่างและสไตล์ของ nav */
+  .home .home-il {
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  /* การจัดระยะห่างและสไตล์ของรายการ */
+  .home .home-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* การจัดระยะห่างและสไตล์ของลิงก์ */
+  .home .home-a1,
+  .home .home-a2, 
+  .home .home-a3 {
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    color: #333; /* สีข้อความ */
+  }
+  
+  /* สไตล์ emoji */
+  .home .home-emoji-1,
+  .home .home-emoji-2,
+  .home .home-emoji-3 {
+    margin-right: 5px;
+  }
+  
+  /* สไตล์สำหรับลิงก์ที่เลือก */
+  .home .home-a1:hover,
+  .home .home-a2:hover,
+  .home .home-a3:hover {
+    color: #ff6600; /* สีข้อความเมื่อ hover */
+  }
+  

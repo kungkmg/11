@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>or19 | โดเนท</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fd.css">
+    <link rel="stylesheet" href="h1.css">
+</head>
+<body>
+    <header>
+        <div class="home">
+          <nav class="home-il">
+            <ui class="home-list">
+              <a class="home-a1" href="/"><span class="home-emoji-1">🏡</span>หน้าแรก</a>
+              <a class="home-a2" href="/profile"><span class="home-emoji-2">🎫</span>โปรไฟล์</a>
+              <a class="home-a3" href="/g"><span class="home-emoji-3">💬</span>ติดต่อเรา</a>
+              <a class="home-a3" href="/h"><span class="home-emoji-3">👩‍💻</span>ผู้จัดทำเว็บ</a>
+              <a class="home-a3" href="/topup"><span class="home-emoji-3">💸</span>โดเนท</a>
+            </ui>
+          </nav>
+        </div>
+      </header>
+    <form id="topupForm">
+        <input type="hidden" id="phoneNumber" name="phoneNumber" value="0840399618">
+        <label for="voucherCode">ใส่ลิ้งอังเป่านะ:</label><br>
+        <input type="text" id="voucherCode" name="voucherCode"><br><br>
+        <button type="button" onclick="topup()">กดเปย์</button>
+    </form>
+
+    <script>
+        async function getWallet(code) {
+            const phoneNumber = "0840399618";
+            const tw = await twApi(code, phoneNumber);
+            switch (tw.status.code) {
+                case "SUCCESS":
+                    console.log('ได้รับเงินแล้วจำนวน ' + tw.data.my_ticket.amount_baht);
+                    break;
+                case "CANNOT_GET_OWN_VOUCHER":
+                    console.log('ไม่สามารถรับซองของตัวเองได้');
+                    break;
+                case "TARGET_USER_NOT_FOUND":
+                    console.log('ไม่พบเบอร์โทรศัพท์นี้ในระบบ');
+                    break;
+                case "INTERNAL_ERROR":
+                    console.log('เกิดข้อผิดพลาดภายใน');
+                    break;
+                case "VOUCHER_OUT_OF_STOCK":
+                    console.log('ซองวอเลทหมดแล้ว');
+                    break;
+                case "VOUCHER_NOT_FOUND":
+                    console.log('ไม่พบซองวอเลท');
+                    break;
+                case "VOUCHER_EXPIRED":
+                    console.log('ซองวอเลทหมดอายุ');
+                    break;
+                default:
+                    console.log('เกิดข้อผิดพลาด');
+                    break;
+            }
+        }
+
+        function topup() {
+            const phoneNumber = document.getElementById("phoneNumber").value;
+            const voucherCode = document.getElementById("voucherCode").value;
+
+            fetch('/topup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    phoneNumber: phoneNumber,
+                    voucherCode: voucherCode
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('invalid voucher code');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if ("SUCCESS" === data.status.code) {
+                    getWallet(data.code);
+                } else {
+                    throw Error(data.status.code);
+                }
+            })
+            .catch(error => {
+                console.error(error.message);
+            });
+        }
+    </script>
+</html>

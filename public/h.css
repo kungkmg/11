@@ -1,0 +1,52 @@
+/* h.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the container */
+.discord1 {
+    width: 19rem; /* 15x15 จาก rem (root em) */
+    height: 22rem;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the Discord User Data title */
+.discord1-discord-img-dicord-wbe {
+    font-size: 24px;
+    background-color: rgb(236, 245, 245);
+    font-weight: bold;
+    color: #0dd8fc;
+    margin-bottom: 20px;
+}
+
+/* Style for the individual user data */
+.discord1-discord-img-dicord-wbe-discord-bb {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.discord1-discord-img {
+    position: absolute;
+    top: 17.9%;
+    right: 45%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.txt {
+    color: #0dd8fc;
+}
+.txt1 {
+    color: #ec0808;
+}

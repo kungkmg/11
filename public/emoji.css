@@ -1,0 +1,40 @@
+.kung {
+    text-align: center;
+}
+
+ .kung .kung-emoji-1,
+ .kung .kung-emoji-2 {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+  }
+  
+
+ .kung .kung-ui-1,
+ .kung .kung-ui-2 {
+    text-decoration: none;
+    color: #0078d4;
+    display: block;
+    max-width: 300px;
+  }
+  
+ .kung .kung-ui-1:hover,
+ .kung .kung-ui-2:hover {
+    color: #0056b3;
+  } 
+  
+
+ .kung .kung-li-1,
+ .kung .kung-li-2 {
+    background-color: #f5f5f5; 
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+ .kung .kung-text-1,
+ .kung .kung-text-2 {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 18px;
+  }

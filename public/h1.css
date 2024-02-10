@@ -1,0 +1,28 @@
+/* Footer container */
+.footer {
+    background-color: #f3f4f6; /* สีพื้นหลัง */
+    padding: 20px; /* ระยะห่างขอบ */
+    text-align: center; /* จัดข้อความตรงกลาง */
+    border-top: 1px solid #d1d5db; /* เส้นขอบด้านบน */
+  }
+  
+  /* Footer links */
+  .footer a {
+    color: #4b5563; /* สีข้อความลิงก์ */
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ข้อความลิงก์ */
+    margin: 0 10px; /* ระยะห่างข้างข้อความลิงก์ */
+  }
+  
+  .footer a:hover {
+    color: #6b7280; /* สีข้อความลิงก์เมื่อโฮเวอร์ */
+  }
+  
+  /* Dark mode footer links */
+  .dark .footer a {
+    color: #a0aec0; /* สีข้อความลิงก์ในโหมดมืด */
+  }
+  
+  .dark .footer a:hover {
+    color: #cbd5e0; /* สีข้อความลิงก์เมื่อโฮเวอร์ในโหมดมืด */
+  }
+  

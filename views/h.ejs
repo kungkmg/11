@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>or19 | ส่วนร่วม</title>
+    <link rel="stylesheet" href="h.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1108244364989313107/1118531081096941658/maxresdefault.jpg" />
+    <link rel="stylesheet" href="h1.css">
+    <link rel="stylesheet" href="fd.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Kanit", sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #04bff8;
+        border-radius: 2px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #a19e9e;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #181818;
+          color: #fff;
+        }
+      }
+      </style>
+      <style>
+        .custom-container {
+          position: fixed;
+          z-index: 20;
+          right: 1.5rem;
+          bottom: 1.5rem;
+          animation: pulse 1s infinite;
+          pointer-events: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      
+        .custom-button {
+          position: relative;
+          min-height: 2rem;
+          min-width: 2rem;
+          background-color: #f9fafa;
+          border-radius: 50%;
+          transition: all 0.2s;
+        }
+      
+        .custom-button:hover {
+          transform: scale(0.1);
+        }
+      
+        .spinner {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          right: -11%;
+          top: -11%;
+          border: 2%;
+          border-color: #f007b6;
+          border-style: solid;
+          animation: spin-l 2s linear infinite, spin-r 2s linear infinite;
+        }
+      
+        .text-overlay {
+          position: absolute;
+          top: 30%;
+          right: 12%;
+          grid-template-columns: 1fr;
+          justify-content: center;
+          text-align: center;
+          text-shadow: 5 5 11px #ec0a8e;
+          color: #fc08aa;
+        }
+      
+        @keyframes pulse {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1);
+          }
+        }
+      
+        @keyframes spin-l {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      
+        @keyframes spin-r {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(-360deg);
+          }
+        }
+      </style>
+</head>
+
+<body>
+  <header>
+    <div class="home">
+      <nav class="home-il">
+        <ui class="home-list">
+          <a class="home-a1" href="/"><span class="home-emoji-1">🏡</span>หน้าแรก</a>
+          <a class="home-a2" href="/profile"><span class="home-emoji-2">🎫</span>โปรไฟล์</a>
+          <a class="home-a3" href="/g"><span class="home-emoji-3">💬</span>ติดต่อเรา</a>
+          <a class="home-a3" href="/h"><span class="home-emoji-3">👩‍💻</span>ผู้จัดทำเว็บ</a>
+          <a class="home-a3" href="/topup"><span class="home-emoji-3">💸</span>โดเนท</a>
+        </ui>
+      </nav>
+    </div>
+  </header>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="discord1">
+        <img class="discord1-discord-img" src="/to/discord.png">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="discord1-discord-img-dicord-wbe" class="text-2xl">ผู้พัฒนา/เจ้าของเว็บ</div>
+        <div class="discord1-discord-img-dicord-wbe-discord-bb" id="userData"></div>
+        <br>
+        <h4 class="txt">ก็บอกเองนิว่าไม่อยากเห็นหน้าทางนี่ก็ไม่เห็นค่าแล้วเหมี่อนกัน</h4>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="scrollIndicator" class="custom-container">
+      <button class="custom-button">
+        <div class="spinner"></div>
+        <div class="spinner" style="animation-direction: reverse;"></div>
+        <div class="text-overlay"></div>
+      </button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer class="footer">
+        <div class="container">
+          <p>นี่จะเป็นเว็บของ| © | CHERBELL 2024 - 2025 </p>
+          <div class="footer-links">
+            <a href="/term-of-service">ข้อกําหนด</a>
+            <a href="/privacy-policy">นโยบาย</a>
+          </div>
+        </div>
+      </footer>
+    <script>
+        fetch('http://api.masuru.in.th/api/v1/discord/users/1014087010585161768')
+            .then(response => response.json())
+            .then(data => {
+                const userDataHTML = `
+                    <p>ชื่อผู้ทำ: ${data.data.discord_user.username}</p>
+                    <p>ชื่อรอง: ${data.data.discord_user.global_name}</p>
+                `;
+                document.getElementById('userData').innerHTML = userDataHTML;
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+
+</html>
