@@ -20,11 +20,11 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(require('express-session')({ secret: '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', resave: true, saveUninitialized: true }));
+app.use(require('express-session')({ secret: '.', resave: true, saveUninitialized: true }));
 
 
-const GOOGLE_CLIENT_ID = '619321687974-cpugelt66blb563dafkf15f2qoqia43n.apps.googleusercontent.com';
-const GOOGLE_CLIENT_SECRET = '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';
+const GOOGLE_CLIENT_ID = '.';
+const GOOGLE_CLIENT_SECRET = '.';
 
 
 
@@ -155,8 +155,8 @@ app.post('/login', (req, res) => {
 });
 
 passport.use(new DiscordStrategy({
-  clientID: '1197931475975286825',
-  clientSecret: '_8BibfrRnH5n1uyfPmk50gp4jCM8Z09h',
+  clientID: '.',
+  clientSecret: '.',
   callbackURL: 'http://localhost:3000/callback',
   scope: ['identify', 'email']
 }, (accessToken, refreshToken, profile, done) => {
